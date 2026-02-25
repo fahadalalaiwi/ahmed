@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>درس حروف المد - مدرسة محمد بن المثنى</title>
+    <style>
+        :root {
+            --school-color: #FF1493;
+            --gift-color: #483D8B;
+            --bg-grad: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            --accent-teal: #20B2AA;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-grad);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            height: -webkit-fill-available;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .school-header {
+            width: 100%;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: clamp(1rem, 4vw, 1.8rem);
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px #FFD700, 2px 2px 5px #FF8C00;
+            flex-shrink: 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        #video-container {
+            width: 95%;
+            max-width: 950px;
+            flex-grow: 1;
+            background: white;
+            border: 6px solid #FFED00;
+            border-radius: 25px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: 5px 0;
+            overflow: hidden;
+        }
+
+        .top-bar {
+            padding: 10px 25px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px dashed #FF9F1C;
+            flex-shrink: 0;
+            min-height: 110px;
+        }
+
+        #logo { 
+            height: clamp(65px, 13vh, 95px); 
+            width: auto;
+            max-width: 45%;
+            object-fit: contain;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .lesson-tag { 
+            font-size: clamp(0.9rem, 3vw, 1.3rem); 
+            color: #555; 
+            font-weight: bold;
+            background: #f8f8f8;
+            padding: 8px 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .slide { display: none; width: 100%; animation: fadeIn 0.6s ease-out; }
+        .slide.active { display: block; }
+
+        h2 { font-size: clamp(1.6rem, 7vw, 2.8rem); color: #FF4500; margin: 0 0 15px 0; }
+        p { font-size: clamp(1rem, 4.2vw, 1.6rem); color: #333; margin: 10px 0; line-height: 1.6; }
+        
+        .highlight {
+            color: white;
+            background: var(--accent-teal);
+            padding: 4px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #fff9e6;
+            border: 2px solid #FFD700;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+
+        .big-chars {
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            color: #FFD700;
+            display: block;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px #333;
+        }
+
+        .gift-footer {
+            width: 95%;
+            max-width: 900px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            border: 2px solid var(--gift-color);
+            color: var(--gift-color);
+            font-size: clamp(0.75rem, 3.5vw, 1.1rem);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #FF4500;
+            width: 0%;
+            position: absolute;
+            bottom: 0;
+            transition: width 10s linear;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #FFD700, 2px 2px 5px #FF8C00; }
+            to { text-shadow: 0 0 20px #FFF, 4px 4px 15px #FF1493; }
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div class="school-header">مدرسة محمد بن المثنى الإبتدائية</div>
+
+    <div id="video-container">
+        <div class="top-bar">
+            <img src="logo.png" id="logo" alt=" " onerror="this.style.opacity='0'">
+            <div class="lesson-tag">📚 درس حروف المد</div>
+        </div>
+
+        <div class="content-area">
+            <div class="slide active">
+                <h2>ما هي حروف المد؟</h2>
+                <p>هي حروف تُطيل الصوت عند النطق، وهي ثلاثة:</p>
+                <span class="big-chars">الألف (ا)، الواو (و)، الياء (ي)</span>
+                <p>يسمى <span class="highlight">المد الطبيعي</span> ومقداره حركتان</p>
+            </div>
+
+            <div class="slide">
+                <h2>أولاً: المد بالألف</h2>
+                <p>يأتي قبله حرف <span class="highlight">مفتوح (َ)</span>، والألف ساكنة دائماً</p>
+                <div class="example-box">
+                    <p>أمثلة: <span style="color:red">قَال</span>، نام، باب، كتاب، سحاب</p>
+                    <p style="font-size: 0.9em; color: #666;">في "قال" القاف مفتوحة وبعدها ألف: <span style="color:red">قا</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>ثانياً: المد بالواو</h2>
+                <p>يأتي قبله حرف <span class="highlight">مضموم (ُ)</span>، والواو ساكنة</p>
+                <div class="example-box">
+                    <p>أمثلة: <span style="color:red">يقُول</span>، نور، رسول، يعود، قلوب</p>
+                    <p style="font-size: 0.9em; color: #666;">في "يقول" القاف مضمومة وبعدها واو: <span style="color:red">قو</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>ثالثاً: المد بالياء</h2>
+                <p>يأتي قبله حرف <span class="highlight">مكسور (ِ)</span>، والياء ساكنة</p>
+                <div class="example-box">
+                    <p>أمثلة: <span style="color:red">كبِير</span>، جميل، سميع، بعيد، كريم</p>
+                    <p style="font-size: 0.9em; color: #666;">في "كبير" الباء مكسورة وبعدها ياء: <span style="color:red">بي</span></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>القاعدة الذهبية 🌟</h2>
+                <p>يجب أن يأتي قبل حرف المد <span class="highlight">حركة تناسبه</span></p>
+                <p>الألف يسبقه فتح َ | الواو يسبقها ضم ُ | الياء يسبقها كسر ِ</p>
+                <p>إذا تطابقت الحركة مع حرف المد طال الصوت <span class="highlight">حركتين</span></p>
+            </div>
+        </div>
+
+        <div class="progress-bar" id="pBar"></div>
+    </div>
+
+    <div class="gift-footer">
+        ✨ مشاركة من الطالب المبدع: <span style="color: #FF1493;">أحمد فهد</span> <br>
+        إلى مربية الأجيال الأستاذة الغالية: <span style="color: #FF1493;">عيدة القحطاني</span> ❤️
+    </div>
+
+    <script>
+        let currentIdx = 0;
+        const allSlides = document.querySelectorAll('.slide');
+        const pBar = document.getElementById('pBar');
+
+        function nextSlide() {
+            allSlides[currentIdx].classList.remove('active');
+            currentIdx = (currentIdx + 1) % allSlides.length;
+            allSlides[currentIdx].classList.add('active');
+            
+            pBar.style.transition = 'none';
+            pBar.style.width = '0%';
+            setTimeout(() => {
+                pBar.style.transition = 'width 10s linear';
+                pBar.style.width = '100%';
+            }, 50);
+        }
+
+        pBar.style.width = '100%';
+        setInterval(nextSlide, 10000);
+    </script>
+</body>
+</html>
